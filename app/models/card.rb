@@ -1,10 +1,10 @@
 class Card
   attr_accessor :number, :suit, :value
 
-  def initialize(number,suit)
-    @number = number
-    @suit = suit
-    set_value(number)
+  def initialize(params = nil,number = nil,suit = nil)
+    @number = number || params[:number]
+    @suit = suit || params[:suit]
+    set_value(@number)
   end
 
   def set_value(number)
@@ -51,6 +51,13 @@ class Card
       else
         return @value
     end
+  end
+
+  def self.params
+    [
+      :number,
+      :suit
+    ]
   end
 
 end
