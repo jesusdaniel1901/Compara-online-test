@@ -1,9 +1,9 @@
 # README
 
-This is the backend of the test for the pocker, 
+This is the backend of the test for the poker, 
 the backend basically it's an api and have all the logic of the poker in it
 
-Things you may want to cover:
+Setup:
 
 * The recommended ruby version for running the project is ruby 2.4.1
 

@@ -8,7 +8,7 @@ class V1::DealerController < V1::ApiController
   def deal
     return render json: {error: 'Please send the token the cards'} unless params[:token].present?
     response = Dealer.deal(params[:token])
-    render json: response,status: response.length > 0 ?  200 : response["statusCode"]
+    render json: response,status: response.first.first == "statusCode" ? response["statusCode"] : 200
   end
 
 end
