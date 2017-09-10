@@ -2,23 +2,13 @@ class V1::DealerController < V1::ApiController
 
   def deck
     response = Dealer.get_deck_token
-    if !response.include? 'Error'
-      render json: {token: response}
-    else
-      json_error = JSON.parse(response)
-      render json: json_error,status: :internal_server_error
-    end
+    render json: response,status: response["statusCode"].present? ? response["statusCode"].to_i : 200
   end
 
   def deal
+    return render json: {error: 'Please send the token the cards'} unless params[:token].present?
     response = Dealer.deal(params[:token])
-    if !response.include? 'Error'
-      json_cards = JSON.parse(response)
-      render json: json_cards
-    else
-      json_error = JSON.parse(response)
-      render json: json_error,status: :internal_server_error
-    end
+    render json: response,status: response.length > 0 ?  200 : response["statusCode"]
   end
 
 end

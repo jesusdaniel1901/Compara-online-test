@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the backend of the test for the pocker, 
+the backend basically it's an api and have all the logic of the poker in it
 
 Things you may want to cover:
 
-* Ruby version
+* The recommended ruby version for running the project is ruby 2.4.1
 
-* System dependencies
+* The Rails version is Rails 5.1.4
 
-* Configuration
+* After having everything installed run `bundle install`
 
-* Database creation
+* For running the rails server run `rails server` from the root path of the project
 
-* Database initialization
+* For running the test just run `rspec` from the root path of the project
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
